@@ -7,17 +7,19 @@
     User getUserByName(String username);
     int updateUserByName(String oldUsername,User user);
     int deleteUserByName(String username); -->
-    <select id="getUserByName">
-      select * from tb_user where username = @username
+    <select id="getUserByName" resultType="com.monolog7.icecream.entity.User">
+      select * from tb_user where username = #{username}
     </select>
     <insert id="addUser">
-
+      insert into tb_user (username,password,email,phone,intro,qq,wechat,address,hobby,role,create_time,update_time,birthday)
+      values(#{username},#{password},#{email},#{phone},#{intro},#{qq},#{wechat},#{address},#{hobby},#{role},#{createTime},#{updateTime},#{birthday})
     </insert>
     <update id="updateUserByName">
-
+      update tb_user set username=#{username},password=#{password},email=#{email},phone=#{phone},intro=#{intro},qq=#{qq},wechat=#{wechat},
+      hobby=#{hobby},role=#{role},create_time=#{createTime},update_time=#{updateTime},birthday=#{birthday} where username=#{username}
     </update>
     <delete id="deleteUserByName">
-
+      delete from tb_user where username=#{username}
     </delete>
     <!--<resultMap type="org.apache.ibatis.submitted.rounding.User" id="usermap">
         <id column="id" property="id"/>

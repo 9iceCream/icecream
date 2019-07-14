@@ -7,17 +7,17 @@
     RolePermission getRole(int role);
     int updateRole(int oldRole,RolePermission rolePermission);
     int deleteRole(int role); -->
-    <select id="getUserByName">
-
+    <select id="getRole">
+      select * from tb_role_permission where role = #{role}
     </select>
     <insert id="addRole">
-
+      insert into tb_role_permission (role,role_name,permission) values (#{role},#{roleName},#{permission})
     </insert>
     <update id="updateRole">
-
+      update tb_role_permission set role=#{role},role_name=#{roleName},permission=#{permission} where role = #{role}
     </update>
     <delete id="deleteRole">
-
+      delete from tb_role_permission where role=#{role}
     </delete>
     <!--<resultMap type="org.apache.ibatis.submitted.rounding.User" id="usermap">
         <id column="id" property="id"/>

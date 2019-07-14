@@ -28,9 +28,11 @@ public class DruidConfig {
         Map<String,String> initParams = new HashMap<>();
         initParams.put("loginUsername","icecream");
         initParams.put("loginPassword","cheng@9s");
-        initParams.put("allow","");
-
+        initParams.put("allow","127.0.0.1");
+        initParams.put("deny","192.168.0.2");
+        initParams.put("resetEnable","false");
         bean.setInitParameters(initParams);
+        bean.addUrlMappings("/druid/*");
         return bean;
     }
 
