@@ -1,48 +1,29 @@
 package com.monolog7.icecream.entity;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import lombok.EqualsAndHashCode;
+import lombok.Getter;
+import lombok.Setter;
+import lombok.ToString;
 
-@Entity
+import java.util.Date;
+
+@Setter
+@Getter
+@ToString
+@EqualsAndHashCode
 public class User {
-    @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    private Integer id;
+    private long id;
     private String username;
+    private String password;
     private String email;
-    private String passowrd;
-
-    public Integer getId() {
-        return id;
-    }
-
-    public String getUsername() {
-        return username;
-    }
-
-    public String getEmail() {
-        return email;
-    }
-
-    public String getPassowrd() {
-        return passowrd;
-    }
-
-    public void setId(Integer id) {
-        this.id = id;
-    }
-
-    public void setUsername(String username) {
-        this.username = username;
-    }
-
-    public void setEmail(String email) {
-        this.email = email;
-    }
-
-    public void setPassowrd(String passowrd) {
-        this.passowrd = passowrd;
-    }
+    private int phone;
+    private String intro;
+    private int qq;
+    private String wechat;
+    private String address;
+    private String hobby;
+    private int role;
+    private Date createTime;
+    private Date updateTime;
+    private Date birthday;
 }

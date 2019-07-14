@@ -1,3 +1,3 @@
-create database db_example;
+create database db_icecream;
 create user 'springuser'@'%' identified by 'icecream';
-grant all on db_example.* to 'springuser'@'%';
+grant all on db_icecream.* to 'springuser'@'%';
