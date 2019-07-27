@@ -13,5 +13,6 @@ public class RolePermission {
     private int id;
     private int role;
     private String roleName;
+    //权限
     private String permission;
 }

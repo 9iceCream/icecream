@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.RestController;
 @Api(value = "HelloController")
 @RestController
 public class HelloController {
+
     @CrossOrigin
     @ApiOperation(value = "hello")
     @RequestMapping(value = "/hello",method = RequestMethod.GET)

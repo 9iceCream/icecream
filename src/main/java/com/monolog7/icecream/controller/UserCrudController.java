@@ -3,6 +3,7 @@ package com.monolog7.icecream.controller;
 import com.monolog7.icecream.dao.UserDao;
 import com.monolog7.icecream.entity.User;
 import io.swagger.annotations.*;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
@@ -12,8 +13,7 @@ import javax.annotation.Resource;
 @RestController
 public class UserCrudController {
 
-//    @Autowired
-    @Resource
+    @Autowired
     private UserDao userDao;
 
     @ApiOperation(value = "添加用户")

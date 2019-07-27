@@ -17,11 +17,14 @@ public class User {
     private String password;
     private String email;
     private int phone;
+    //个人简介
     private String intro;
     private int qq;
     private String wechat;
     private String address;
+    //爱好
     private String hobby;
+    //角色
     private int role;
     private Date createTime;
     private Date updateTime;
