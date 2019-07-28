@@ -29,4 +29,6 @@ public class User {
     private Date createTime;
     private Date updateTime;
     private Date birthday;
+    //用户状态
+    private int state;
 }

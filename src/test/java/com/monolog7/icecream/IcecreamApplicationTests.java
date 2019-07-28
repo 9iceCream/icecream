@@ -1,6 +1,7 @@
 package com.monolog7.icecream;
 
-import com.monolog7.icecream.properties.CorsProperties;
+import com.monolog7.icecream.dao.IRolePermissionDao;
+import com.monolog7.icecream.service.UserServiceTest;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.slf4j.Logger;
@@ -14,12 +15,20 @@ import org.springframework.test.context.junit4.SpringRunner;
 public class IcecreamApplicationTests {
 
     @Autowired
-    private CorsProperties corsProperties;
+    private UserServiceTest userServiceTest;
+
+    @Autowired
+    private IRolePermissionDao iRolePermissionDao;
+
     private Logger logger = LoggerFactory.getLogger(getClass());
 
     @Test
     public void contextLoads() {
-        logger.info("bean信息：{}",corsProperties);
+        /*RolePermission rolePermission = new RolePermission();
+        rolePermission.setRole(1);
+        rolePermission.setRoleName("user");
+        rolePermission.setPermission("common");
+        iRolePermissionDao.addRole(rolePermission);*/
+        userServiceTest.setUserRole();
     }
-
 }

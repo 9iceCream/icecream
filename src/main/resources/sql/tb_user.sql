@@ -15,6 +15,7 @@ CREATE TABLE `tb_user`(
 	`create_time` TIME,
 	`update_time` TIME,
 	`birthday` DATE,
+	`state` INT(2),
 	PRIMARY KEY(`id`),
 	UNIQUE index_user (email),
 	UNIQUE index_email (username),

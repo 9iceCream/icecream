@@ -2,11 +2,12 @@ package com.monolog7.icecream.dao;
 
 import com.monolog7.icecream.entity.User;
 import org.apache.ibatis.annotations.Mapper;
+import org.apache.ibatis.annotations.Param;
 
 @Mapper
-public interface UserDao {
+public interface IUserDao {
     int addUser(User user);
     User getUserByName(String username);
-    int updateUserByName(String oldUsername,User user);
+    int updateUserByName(@Param("oldUsername") String oldUsername, @Param("user") User user);
     int deleteUserByName(String username);
 }

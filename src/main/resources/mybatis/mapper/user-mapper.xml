@@ -2,7 +2,7 @@
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
-<mapper namespace="com.monolog7.icecream.dao.UserDao">
+<mapper namespace="com.monolog7.icecream.dao.IUserDao">
     <!-- int addUser(User user);
     User getUserByName(String username);
     int updateUserByName(String oldUsername,User user);
@@ -11,12 +11,12 @@
       select * from tb_user where username = #{username}
     </select>
     <insert id="addUser">
-      insert into tb_user (username,password,email,phone,intro,qq,wechat,address,hobby,role,create_time,update_time,birthday)
-      values(#{username},#{password},#{email},#{phone},#{intro},#{qq},#{wechat},#{address},#{hobby},#{role},#{createTime},#{updateTime},#{birthday})
+      insert into tb_user (username,password,email,phone,intro,qq,wechat,address,hobby,role,create_time,update_time,birthday,state)
+      values(#{username},#{password},#{email},#{phone},#{intro},#{qq},#{wechat},#{address},#{hobby},#{role},#{createTime},#{updateTime},#{birthday},#{state})
     </insert>
     <update id="updateUserByName">
-      update tb_user set username=#{username},password=#{password},email=#{email},phone=#{phone},intro=#{intro},qq=#{qq},wechat=#{wechat},
-      hobby=#{hobby},role=#{role},create_time=#{createTime},update_time=#{updateTime},birthday=#{birthday} where username=#{username}
+      update tb_user set username=#{user.username},password=#{user.password},email=#{user.email},phone=#{user.phone},intro=#{user.intro},qq=#{user.qq},wechat=#{user.wechat},
+      hobby=#{user.hobby},role=#{user.role},create_time=#{user.createTime},update_time=#{user.updateTime},birthday=#{user.birthday},state=#{user.state} where username=#{oldUsername}
     </update>
     <delete id="deleteUserByName">
       delete from tb_user where username=#{username}

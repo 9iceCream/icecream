@@ -2,12 +2,12 @@
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
-<mapper namespace="com.monolog7.icecream.dao.RolePermissionDao">
+<mapper namespace="com.monolog7.icecream.dao.IRolePermissionDao">
     <!-- int addRole(RolePermission rolePermission);
     RolePermission getRole(int role);
     int updateRole(int oldRole,RolePermission rolePermission);
     int deleteRole(int role); -->
-    <select id="getRole">
+    <select id="getRole" resultType="com.monolog7.icecream.entity.RolePermission">
       select * from tb_role_permission where role = #{role}
     </select>
     <insert id="addRole">
